@@ -1,5 +1,2 @@
-#### 军棋
-
----
-
-开发实践课程的小组项目
+JunChess Program
+Created by 11th group

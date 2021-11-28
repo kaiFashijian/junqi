@@ -1,2 +1,2 @@
 JunChess Program
-Created by 11th group
+created by 11th group

@@ -73,14 +73,15 @@ void RegisterWindow::CheckRegisteration()
 
     //封装用户注册网络包 "U&R&邮箱&密码"
     QString str = "U&R&";
-    str.append(mail).append("#").append(pwd);
+    str.append(mail).append("&").append(pwd);
     //发送包
     Connection *cont = Connection::getConnection();
     cont->sendMsg(str);
-    //cont->readMsg();
 }
 
 void RegisterWindow::readMessage(QString msg)
 {
-    qDebug() << msg;
+    // U&R#S
+
+    // U&R#W#
 }

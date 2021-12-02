@@ -33,6 +33,7 @@ ForgetWindow::~ForgetWindow()
 void ForgetWindow::CheckModification()
 {
     // TODO(@li)
+    // U&M&mail&pwd
 }
 
 void ForgetWindow::SendVerify()
@@ -51,4 +52,6 @@ void ForgetWindow::SendVerify()
 void ForgetWindow::readMeg(QString msg)
 {
     // TODO(@li)
+    // U&M&S
+    // U&M&W
 }

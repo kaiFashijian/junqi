@@ -45,6 +45,7 @@ LogInWindow::~LogInWindow()
 void LogInWindow::readMsg(QString msg)
 {
     // TODO(@li)
+    //
 }
 
 void LogInWindow::show()

@@ -25,6 +25,7 @@ signals:
 
 public slots:
     void readMsg();
+    void reConnect();
 
 private:
     static const int port;

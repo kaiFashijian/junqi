@@ -42,13 +42,29 @@ LogInWindow::~LogInWindow()
     delete ui;
 }
 
+void LogInWindow::CheckLogIn() {
+    QString mail = ui->lineEdit_mail->text();
+    QString pwd = ui->lineEdit_pwd->text();
+
+    if (mail == "" || pwd == "") {
+       FeedbackMessage("输入内容不能为空");
+       return;
+    }
+
+    //封装用户登录网络包 "U&L&邮箱&密码"
+    QString str = "U&R&";
+    str.append(mail).append("&").append(pwd);
+    //发送包
+    Connection *cont = Connection::getConnection();
+    cont->sendMsg(str);
+}
+
+void LogInWindow::FeedbackMessage(QString msg) {
+    QMessageBox::critical(this, "登录错误", msg);
+}
+
 void LogInWindow::readMsg(QString msg)
 {
     // TODO(@li)
-    //
-}
 
-void LogInWindow::show()
-{
-   this->QMainWindow::show();
 }

@@ -30,10 +30,42 @@ ForgetWindow::~ForgetWindow()
     delete ui;
 }
 
+void ForgetWindow::FeedbackMessage(QString msg) {
+    QMessageBox::critical(this, "修改错误", msg);
+}
+
 void ForgetWindow::CheckModification()
 {
-    // TODO(@li)
-    // U&M&mail&pwd
+    QString mail = ui->lineEdit_mail->text();
+    QString new_pwd = ui->lineEdit_pwd_new->text();
+    QString ack_pwd = ui->lineEdit_pwd_ack->text();
+    QString verification_code = ui->lineEdit_verify->text();
+
+    if (new_pwd == "" || ack_pwd == "" || mail == "" || verification_code == "") {
+        FeedbackMessage("输入内容不能为空");
+        return;
+    }
+
+    // 检查两次密码是否相同
+    if (new_pwd != ack_pwd)
+    {
+        FeedbackMessage("两次密码不一样");
+        return;
+    }
+
+    // 检查邮箱验证码
+    if (_verification_code != verification_code)
+    {
+        FeedbackMessage("邮箱验证码出错");
+        return;
+    }
+
+    //封装用户修改密码网络包 "U&R&邮箱&新密码"
+    QString str = "U&M&";
+    str.append(mail).append("&").append(new_pwd);
+    //发送包
+    Connection *cont = Connection::getConnection();
+    cont->sendMsg(str);
 }
 
 void ForgetWindow::SendVerify()
@@ -51,7 +83,10 @@ void ForgetWindow::SendVerify()
 
 void ForgetWindow::readMeg(QString msg)
 {
-    // TODO(@li)
-    // U&M&S
-    // U&M&W
+    if (msg == "S") {
+        FeedbackMessage("修改密码成功，请重新登录");
+        emit ui->pushButton_ret->clicked();
+    } else {
+        FeedbackMessage("修改密码失败，请重新尝试");
+    }
 }

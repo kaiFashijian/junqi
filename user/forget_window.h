@@ -5,6 +5,7 @@
 #include "public/smtp.h"
 
 #include <QMainWindow>
+#include <QMessageBox>
 
 namespace Ui {
 class ForgetWindow;
@@ -16,8 +17,9 @@ class ForgetWindow : public QMainWindow
 public:
     explicit ForgetWindow(QWidget *parent = nullptr);
     ~ForgetWindow();
+    void FeedbackMessage(QString msg); // 展示各种反馈信息
 
-public slots:
+private slots:
     void SendVerify();                 // 发送注册邮箱用验证码
     void CheckModification();          // 确保发送可用的注册信息
     void readMeg(QString);             // 接收来自服务器的数据

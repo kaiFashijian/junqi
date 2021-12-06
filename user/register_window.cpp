@@ -34,7 +34,7 @@ RegisterWindow::~RegisterWindow()
 
 void RegisterWindow::FeedbackMessage(QString msg)
 {
-    qDebug() << msg;
+    QMessageBox::critical(this, "注册错误", msg);
 }
 
 void RegisterWindow::SendVerify()
@@ -56,6 +56,11 @@ void RegisterWindow::CheckRegisteration()
     QString pwd = ui->lineEdit_pwd->text();
     QString ack_pwd = ui->lineEdit_ack_pwd->text();
     QString verification_code = ui->lineEdit_verify->text();
+
+    if (pwd == "" || ack_pwd == "" || mail == "" || verification_code == "") {
+        FeedbackMessage("输入内容不能为空");
+        return;
+    }
 
     // 检查两次密码是否相同
     if (pwd != ack_pwd)
@@ -81,7 +86,12 @@ void RegisterWindow::CheckRegisteration()
 
 void RegisterWindow::readMessage(QString msg)
 {
-    // U&R#S
+    // TODO(@li)
+    if (msg == "S") { // U&R&S
+        FeedbackMessage("注册成功！请在登录界面登录");
+        emit ui->pushButton_ret->clicked(); // 触发绑定的信号，跳转到登录界面
+    } else { // U&R&W
+        FeedbackMessage("注册失败！请重新尝试");
+    }
 
-    // U&R#W#
 }

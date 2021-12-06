@@ -9,6 +9,7 @@
 #include <QtGlobal>
 #include <QDialog>
 #include <QTcpSocket>
+#include <QMessageBox>
 
 namespace Ui {
 class RegisterWindow;

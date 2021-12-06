@@ -8,6 +8,7 @@
 
 #include <QMainWindow>
 #include <QPushButton>
+#include <QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LogInWindow; }
@@ -20,11 +21,12 @@ class LogInWindow : public QMainWindow
 public:
     LogInWindow(QWidget *parent = nullptr);
     ~LogInWindow();
+    void FeedbackMessage(QString msg);
 
-    void show();
 
-public slots:
+private slots:
     void readMsg(QString);
+    void CheckLogIn();
 
 signals:
     void GameShow();

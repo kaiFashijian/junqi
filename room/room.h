@@ -2,7 +2,10 @@
 #define ROOM_H
 
 #include <QDialog>
-
+#include "game/mainwindow.h"
+#include <qtimer.h>
+#include "public/connection.h"
+#include "user/user.h"
 
 namespace Ui {
 class room;
@@ -15,14 +18,23 @@ class room : public QDialog
 public:
     explicit room(QWidget *parent = nullptr);
     ~room();
+    int ready_num=0;//1为测试时使用，实际应为0
+    QTimer* timer;
+    void showEvent(QShowEvent *);
 
 private slots:
-    void on_pushButton_clicked();
+    void enter_game();
 
-    void on_pushButton_2_clicked();
+    //void on_exit_button_clicked();
+
 
 private:
     Ui::room *ui;
+    MainWindow game;
+
+signals:
+    void back();
+
 
 };
 

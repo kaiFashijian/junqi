@@ -21,6 +21,7 @@ signals:
     void ULsignal(QString);
     void UMsiganl(QString);
     void TestSignal(QString);
+    void RRRsignal(QString);//请求房间信号
 
 
 public slots:

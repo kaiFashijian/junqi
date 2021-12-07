@@ -25,7 +25,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QToolButton" name="toolButton">
+  <widget class="QToolButton" name="help_button">
    <property name="geometry">
     <rect>
      <x>520</x>
@@ -74,7 +74,7 @@
      </spacer>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="ready_button">
       <property name="minimumSize">
        <size>
         <width>100</width>
@@ -106,7 +106,7 @@
      </spacer>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="exit_button">
       <property name="minimumSize">
        <size>
         <width>100</width>
@@ -144,7 +144,7 @@
     <rect>
      <x>30</x>
      <y>80</y>
-     <width>561</width>
+     <width>576</width>
      <height>191</height>
     </rect>
    </property>
@@ -167,7 +167,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QGraphicsView" name="graphicsView_2">
+         <widget class="QGraphicsView" name="his_head">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -219,7 +219,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_7">
+             <widget class="QLabel" name="his_name">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -261,7 +261,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_9">
+             <widget class="QLabel" name="his_score">
               <property name="minimumSize">
                <size>
                 <width>50</width>
@@ -299,7 +299,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QLabel" name="label_10">
+       <widget class="QLabel" name="his_ready_label">
         <property name="minimumSize">
          <size>
           <width>50</width>
@@ -358,7 +358,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QGraphicsView" name="graphicsView">
+         <widget class="QGraphicsView" name="my_head">
           <property name="minimumSize">
            <size>
             <width>120</width>
@@ -410,7 +410,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_2">
+             <widget class="QLabel" name="my_name">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -452,7 +452,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QLabel" name="label_5">
+             <widget class="QLabel" name="my_score">
               <property name="minimumSize">
                <size>
                 <width>50</width>
@@ -490,7 +490,7 @@
        </layout>
       </item>
       <item>
-       <widget class="QLabel" name="label_6">
+       <widget class="QLabel" name="my_ready_label">
         <property name="minimumSize">
          <size>
           <width>50</width>

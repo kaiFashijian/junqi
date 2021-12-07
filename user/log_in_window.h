@@ -5,6 +5,7 @@
 #include "register_window.h"
 #include "room/dating.h"
 #include "public/connection.h"
+#include "public/public.h"
 
 #include <QMainWindow>
 #include <QPushButton>

@@ -26,12 +26,12 @@ LogInWindow::LogInWindow(QWidget *parent)
     });
 
     // 登录成功后跳转到游戏大厅界面
-    connect(ui->pushButton_log_in, &QPushButton::clicked, this, [=](){
+    //connect(ui->pushButton_log_in, &QPushButton::clicked, this, [=](){
        // TODO（@yang）
-       auto roomWindow = new dating();
-       roomWindow->show();
-       this->close();
-    });
+    //   auto roomWindow = new dating();
+    //   roomWindow->show();
+    //   this->close();
+    //});
 
     // 接收来自服务器的消息
     connect(cont, &Connection::ULsignal, this, &LogInWindow::readMsg);
@@ -65,6 +65,20 @@ void LogInWindow::FeedbackMessage(QString msg) {
 
 void LogInWindow::readMsg(QString msg)
 {
-    // TODO(@li)
+    QStringList attributes_arr = msg.split('#');
+    // "U&L&S#name#uid#scores#friend#icon"
+    if (attributes_arr[0] == "S") {
+        local_user.name = attributes_arr[1];
+        local_user.uid = attributes_arr[2];
+        local_user.scores = attributes_arr[3].toInt();
+        local_user.friends_list = attributes_arr[4].split(' '); // TODO(@ye):好友之间的分隔符是什么
+        local_user.icon_url = attributes_arr[5];
+        // TODO(@li@ye@yang): 登录成功后如何跳转到游戏大厅
+
+    } else { // "U&L&W#wrong_message" TODO(@li)
+        FeedbackMessage("账号不存在或者账号密码不匹配，请重新尝试");
+    }
+
+
 
 }

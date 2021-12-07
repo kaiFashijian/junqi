@@ -45,7 +45,8 @@ HEADERS += \
     game/qchess.h \
     game/qchessmap.h \
     room/dating.h \
-    room/room.h  \
+    room/room.h  \ \
+    user/user.h
 
 
 FORMS += \

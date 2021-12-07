@@ -29,7 +29,7 @@ LogInWindow::LogInWindow(QWidget *parent)
     connect(ui->pushButton_log_in, &QPushButton::clicked, this, [=](){
        // TODO（@yang）
        auto roomWindow = new dating();
-      roomWindow->show();
+       roomWindow->show();
        this->close();
     });
 

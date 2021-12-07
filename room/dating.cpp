@@ -75,7 +75,7 @@ void dating::on_roomtable_cellClicked(int row, int column)
 
 void dating::showEvent(QShowEvent *){
     //重新申请好友、房间、头像等信息
-    //ui->name_label->setText(local_user.name);
+    ui->name_label->setText(local_user.name);
     room_num=-1;
     timer->start();
 };

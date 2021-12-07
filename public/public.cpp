@@ -1,6 +1,9 @@
 #include "public.h"
 using namespace std;
 
+//本地用户默认初始化
+User local_user;
+
 //游戏内变量初始化
 int red_num = 0;
 int blue_num = 0;

@@ -65,6 +65,7 @@ void LogInWindow::FeedbackMessage(QString msg) {
 
 void LogInWindow::readMsg(QString msg)
 {
+    extern User local_user;
     QStringList attributes_arr = msg.split('#');
     // "U&L&S#name#uid#scores#friend#icon"
     if (attributes_arr[0] == "S") {

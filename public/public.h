@@ -86,6 +86,6 @@ extern QVector<QPoint> turnPoint;
 extern QStringList emojiStr;
 
 //用户属性
-User local_user;
+extern User local_user;
 
 #endif // PUBLIC_H

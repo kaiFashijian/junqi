@@ -156,8 +156,39 @@
      <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="help">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action_info"/>
+    <addaction name="action_advice"/>
+    <addaction name="separator"/>
+    <addaction name="action_rules"/>
+    <addaction name="action_about"/>
+   </widget>
+   <addaction name="help"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_advice">
+   <property name="text">
+    <string>反馈信息</string>
+   </property>
+  </action>
+  <action name="action_about">
+   <property name="text">
+    <string>关于我们</string>
+   </property>
+  </action>
+  <action name="action_rules">
+   <property name="text">
+    <string>游戏规则</string>
+   </property>
+  </action>
+  <action name="action_info">
+   <property name="text">
+    <string>个人信息</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -10,6 +10,19 @@ LogInWindow::LogInWindow(QWidget *parent)
 
     ui->setupUi(this);
 
+    // 辅助功能_修改信息
+    connect(ui->action_info, &QAction::triggered, [=](){
+        Information *info = new Information(this);
+        info->exec();
+    });
+
+    // 辅助功能_反馈信息
+    connect(ui->action_advice, &QAction::triggered, [=](){
+        Advice *advice = new Advice(this);
+        advice->exec();
+    });
+
+    // 两个子窗口 注册 和 修改密码 界面
     reg = new RegisterWindow(this);
     modify = new ForgetWindow(this);
 
@@ -27,9 +40,9 @@ LogInWindow::LogInWindow(QWidget *parent)
 
     // 登录成功后跳转到游戏大厅界面
     connect(ui->pushButton_log_in, &QPushButton::clicked, this, [=](){
-       // TODO（@yang）
+       // TODO（@li@yang）
        auto roomWindow = new dating();
-      roomWindow->show();
+       roomWindow->show();
        this->close();
     });
 

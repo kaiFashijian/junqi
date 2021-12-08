@@ -29,8 +29,8 @@ SOURCES += \
     game/qchessmap.cpp \
     room/dating.cpp \
     room/room.cpp \
-
-
+    support/advice.cpp \
+    support/information.cpp \
 
 
 HEADERS += \
@@ -45,8 +45,10 @@ HEADERS += \
     game/qchess.h \
     game/qchessmap.h \
     room/dating.h \
-    room/room.h  \ \
-    user/user.h
+    room/room.h  \
+    user/user.h \
+    support/advice.h \
+    support/information.h \
 
 
 FORMS += \
@@ -56,6 +58,8 @@ FORMS += \
     user/register_window.ui \
     room/dating.ui \
     room/room.ui \
+    support/advice.ui \
+    support/information.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

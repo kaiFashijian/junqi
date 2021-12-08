@@ -18,6 +18,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     game/mainwindow.cpp \
     public/connection.cpp \
+    public/img.cpp \
     user/forget_window.cpp \
     user/main.cpp \
     user/log_in_window.cpp \
@@ -36,6 +37,7 @@ SOURCES += \
 HEADERS += \
     game/mainwindow.h \
     public/connection.h \
+    public/img.h \
     user/forget_window.h \
     user/log_in_window.h \
     user/register_window.h \

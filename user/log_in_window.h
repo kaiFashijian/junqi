@@ -6,6 +6,8 @@
 #include "room/dating.h"
 #include "public/connection.h"
 #include "public/public.h"
+#include "support/advice.h"
+#include "support/information.h"
 
 #include <QMainWindow>
 #include <QPushButton>

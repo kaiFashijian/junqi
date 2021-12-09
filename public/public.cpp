@@ -1,8 +1,12 @@
 #include "public.h"
 using namespace std;
 
-//本地用户默认初始化
-User local_user;
+////配置tcp连接的端口以及ip地址
+//int port = 6080;
+//QString hostname = "127.0.0.1";
+
+////初始化tcp客户端连接
+//QTcpSocket *client = new QTcpSocket();
 
 //游戏内变量初始化
 int red_num = 0;
@@ -22,6 +26,7 @@ int Turny = 0;
 
 QVector<QPoint> MovePoint;
 QPoint TurnPoint;
+
 
 
 int GetChessTypeNum(CHESS_TYPE type)
@@ -102,6 +107,55 @@ QString GetChessPic(CHESS_TYPE type, CAMP_TYPE camp)
     return qsUrl;
 }
 
+QString GetChessCampIntoString(CAMP_TYPE camp)
+{
+    switch (camp) {
+        case RED:
+            return "RED";
+        case BLUE:
+            return "BLUE";
+    default:
+            return "null";
+    }
+}
+
+QString GetChessTypeIntoString(CHESS_TYPE type)
+{
+    switch (type) {
+
+    case CHESS_FALG:
+        return "CHESS_FALG";
+    case CHESS_Commande:
+        return "CHESS_Commande";
+    case CHESS_General:
+        return "CHESS_General";
+    case CHESS_BOMB:
+        return "CHESS_BOMB";
+    case CHESS_Maj_general:
+        return "CHESS_Maj_general";
+    case CHESS_Brigadier:
+        return "CHESS_Brigadier";
+    case CHESS_Colonel:
+        return "CHESS_Colonel";
+    case CHESS_Major:
+        return "CHESS_Major";
+    case CHESS_MINE:
+        return "CHESS_MINE";
+    case CHESS_Captain:      // 连长   3
+        return "CHESS_Captain";
+    case CHESS_Lieutenant:   // 排长   3
+        return "CHESS_Lieutenant";
+    case CHESS_Engineer:      // 工兵   3
+        return "CHESS_Engineer";
+    default:
+        return "null";
+    }
+}
+
+
+
+
+
 
 QStringList emojiStr = {"😄","😆","😊","😃","😏","😍","😘","😚","😳",
                         "😌","😆","😁","😉","😜","😝","😀","😗","😙","😛","😴",
@@ -126,4 +180,7 @@ QStringList emojiStr = {"😄","😆","😊","😃","😏","😍","😘","😚",
 //        "🍶🍼🍺🍻🍸🍹🍷🍴🍕🍔🍟🍗🍖🍝🍛🍤🍱🍣🍥🍙🍘"
 //        "🍚🍜🍲🍢🍡🥚🍞🍩🍮🍦🍨🍧🎂🍰🍪🍫🍬🍭🍯🍎"
 //        "🍏🍊🍋🍒🍇🍉🍓🍑🍈🍌🍐🍍🍠🍆🍅🌽";
+
+
+QMap<QString, int> mapForQiDisplay;
 

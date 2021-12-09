@@ -271,7 +271,7 @@
               <property name="font">
                <font>
                 <family>黑体</family>
-                <pointsize>14</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="text">
@@ -462,7 +462,7 @@
               <property name="font">
                <font>
                 <family>黑体</family>
-                <pointsize>14</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="text">

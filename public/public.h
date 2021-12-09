@@ -4,7 +4,9 @@
 #include<QDataStream>
 #include<QVector>
 #include<QPoint>
-#include<user/user.h>
+
+
+
 
 //棋盘的变量
 
@@ -59,6 +61,8 @@ int GetChessTypeNum(CHESS_TYPE type);
 // 获取各种类型棋子图片
 QString GetChessPic(CHESS_TYPE type, CAMP_TYPE camp);
 
+QString GetChessCampIntoString(CAMP_TYPE camp);
+QString GetChessTypeIntoString(CHESS_TYPE type);
 
 
 //游戏内变量
@@ -85,7 +89,9 @@ extern QVector<QPoint> turnPoint;
 //表情文字收集
 extern QStringList emojiStr;
 
-//用户属性
-extern User local_user;
+
+extern QMap<QString,int> mapForQiDisplay;
+
+
 
 #endif // PUBLIC_H

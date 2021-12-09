@@ -11,10 +11,8 @@ Connection *Connection::getConnection() {
         cont = new Connection();
         cont->client = new QTcpSocket();
         cont->client->connectToHost(hostname, port);
-        // 绑定读信号（服务器有数据返回触发），调用readMsg槽函数发送到各个模块
         connect(cont->client, SIGNAL(readyRead()), cont, SLOT(readMsg()));
-        // 绑定断线信号，调用reConnect槽函数进行重连
-        connect(cont->client, &QTcpSocket::disconnected, cont, &Connection::reConnect);
+        qDebug() << "connected";
     }
     return cont;
 }
@@ -23,17 +21,19 @@ void Connection::sendMsg(QString msg) {
     QByteArray data = msg.toUtf8();
     client->flush();
     client->write(data);
-}
-
-void Connection::reConnect() {
-    cont->client->abort();
-    cont->client->connectToHost(hostname, port);
+    qDebug() << "send successfully";
 }
 
 void Connection::readMsg() {
     QString msg = client->readAll();
+
+
+    qDebug() << msg;
+
     //将接收到的数据存放到变量中
     QStringList data = msg.split('&');
+
+
 
     if (data[0] == "U") { // 用户模块
         if (data[1] == "L") { // 登录
@@ -46,6 +46,12 @@ void Connection::readMsg() {
     } else if (data[0] == "R") { // 房间模块
 
     } else if (data[0] == "G") { // 游戏模块
+//          //only for test
+//            emit TestSignal(data[1]);
+//            emit WordsInGame(data[3]);
+
+
+
 
     } else if (data[0] == "S") { // 辅助模块
 

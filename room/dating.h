@@ -7,7 +7,6 @@
 #include <qmessagebox.h>
 #include <QPushButton>
 #include <qtimer.h>
-//#include"createRoom.h"
 #include "public/connection.h"
 #include "user/user.h"
 
@@ -25,17 +24,23 @@ public:
     int room_num=-1;
     void showEvent(QShowEvent *);
     QTimer* timer;
+    room* room_a;
+    int his_score;
+    QString his_name;
+    QString room_id;
 
 private slots:
     void show_room();//刷新房间列表信息
     void on_roomtable_cellClicked(int row, int column);
-    void  read_room();//获取房间信息
+    void  read_room(QString msg);//获取房间信息
+
 
 
 private:
-    room* room_a;
+
     Ui::dating *ui;
-    //createRoom* create_b;
+    QStringList room_arr;
+    int room_max=-1;    //房间数量
 };
 
 #endif // DATING_H

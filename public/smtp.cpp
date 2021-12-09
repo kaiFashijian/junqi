@@ -10,7 +10,6 @@ Smtp::Smtp(QByteArray username,QByteArray password)
     else
         qDebug()<<"NOT qq";
 }
-
 void Smtp::send(QByteArray recvaddr,QString subject,QString content)
 {
     this->recvaddr = recvaddr;
@@ -75,14 +74,7 @@ void Smtp::send(QByteArray recvaddr,QString subject,QString content)
     recvdata = clientsocket->readAll();
     qDebug()<<recvdata;
 }
-
 Smtp::~Smtp()
 {
     delete this->clientsocket;
-}
-
-QString Smtp::GenerateVarification()
-{
-    qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
-    return QString::number(qrand() % 9000 + 1000);
 }

@@ -21,12 +21,12 @@ signals:
     void ULsignal(QString);
     void UMsiganl(QString);
     void TestSignal(QString);
-    void RRRsignal(QString);//请求房间信号
+
+    void WordsInGame(QString);
 
 
 public slots:
     void readMsg();
-    void reConnect();
 
 private:
     static const int port;
